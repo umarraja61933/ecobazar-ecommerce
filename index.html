@@ -1,0 +1,2113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ecobazar – Fresh &amp; Healthy Organic Food</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="auth-locked">
+    <svg width="0" height="0" style="position: absolute">
+      <symbol id="leaf" viewBox="0 0 32 32">
+        <path
+          d="M16 30V16"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          fill="none"
+        />
+        <path d="M16 17C8 18 3 12 3 5c8-1 13 3 13 12z" fill="currentColor" />
+        <path d="M16 14c0-7 5-11 13-10 0 7-5 12-13 10z" fill="currentColor" />
+      </symbol>
+    </svg>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="wrap">
+        <div class="l">
+          <a
+            class="loc"
+            href="https://www.google.com/maps/search/?api=1&query=Lincoln+344+Illinois+Chicago+USA"
+            target="_blank"
+            rel="noopener"
+            ><i class="bi bi-geo-alt"></i>Store Location: Lincoln- 344,
+            Illinois, Chicago, USA</a
+          >
+        </div>
+        <div class="r">
+          <div class="dd dropdown">
+            <button
+              data-bs-toggle="dropdown"
+              class="dropdown-toggle"
+              id="langBtn"
+            >
+              Eng
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#" data-lang="Eng">English</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" data-lang="Esp">Español</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" data-lang="Urd">اردو</a>
+              </li>
+            </ul>
+          </div>
+          <div class="dd dropdown">
+            <button
+              data-bs-toggle="dropdown"
+              class="dropdown-toggle"
+              id="curBtn"
+            >
+              USD
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" data-cur="USD">USD</a></li>
+              <li><a class="dropdown-item" href="#" data-cur="EUR">EUR</a></li>
+              <li><a class="dropdown-item" href="#" data-cur="GBP">GBP</a></li>
+              <li><a class="dropdown-item" href="#" data-cur="PKR">PKR</a></li>
+            </ul>
+          </div>
+          <span class="sep"></span>
+          <span id="authLink"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="hdr">
+      <div class="wrap">
+        <a href="#/home" class="logo"
+          ><svg><use href="#leaf" /></svg>Ecobazar</a
+        >
+        <form class="search" id="searchForm">
+          <i class="bi bi-search"></i
+          ><input id="q" placeholder="Search" aria-label="Search" /><button
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <div class="hdr-r">
+          <a href="#/wishlist" class="ico" aria-label="Wishlist"
+            ><i class="bi bi-heart"></i><b id="wishCount" hidden>0</b></a
+          >
+          <span class="vs"></span>
+          <button
+            class="cartbox"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#cartPanel"
+            aria-label="Cart"
+          >
+            <span class="ico"
+              ><i class="bi bi-handbag"></i><b id="cartCount">0</b></span
+            >
+            <span
+              ><small>Shopping cart:</small
+              ><strong id="cartTotal">$0.00</strong></span
+            >
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="mnav navbar-dark-wrap">
+      <div class="wrap">
+        <button
+          class="burger"
+          data-bs-toggle="collapse"
+          data-bs-target="#navc"
+          aria-label="Menu"
+        >
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse d-lg-block" id="navc">
+          <ul>
+            <li data-r="home home2" class="dropdown">
+              <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                Home
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#/home">Home 01</a></li>
+                <li><a class="dropdown-item" href="#/home2">Home 02</a></li>
+              </ul>
+            </li>
+            <li
+              data-r="shop product cart checkout wishlist success"
+              class="dropdown"
+            >
+              <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                Shop
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#/shop">All Products</a></li>
+                <li>
+                  <a class="dropdown-item" href="#/shop?src=hot">Hot Deals</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#/shop?src=featured"
+                    >Featured Products</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#/wishlist">Wishlist</a></li>
+                <li>
+                  <a class="dropdown-item" href="#/cart">Shopping Cart</a>
+                </li>
+                <li><a class="dropdown-item" href="#/checkout">Checkout</a></li>
+              </ul>
+            </li>
+            <li
+              data-r="faqs terms privacy track orders account"
+              class="dropdown"
+            >
+              <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                Pages
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#/faqs">FAQs</a></li>
+                <li>
+                  <a class="dropdown-item" href="#/terms"
+                    >Terms &amp; Condition</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#/privacy">Privacy Policy</a>
+                </li>
+                <li><a class="dropdown-item" href="#/track">Track Order</a></li>
+                <li>
+                  <a class="dropdown-item" href="#/orders">Order History</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#/account">My Account</a>
+                </li>
+              </ul>
+            </li>
+            <li data-r="blog" class="dropdown">
+              <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                Blog
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#/blog">Latest News</a></li>
+                <li>
+                  <a class="dropdown-item" href="#/blog/1">Blog Details</a>
+                </li>
+              </ul>
+            </li>
+            <li data-r="about"><a href="#/about">About Us</a></li>
+            <li data-r="contact"><a href="#/contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <a href="tel:2195550114" class="tel"
+          ><i class="bi bi-telephone-outbound fs-5"></i>(219) 555-0114</a
+        >
+      </div>
+    </nav>
+
+    <main id="top">
+      <!-- ================= HOME ================= -->
+      <div id="v-home">
+        <section class="hero">
+          <div class="wrap">
+            <div class="hero-grid">
+              <div class="bn">
+                <img
+                  data-src="Bannar Big"
+                  alt="Fresh & Healthy Organic Food"
+                /><a
+                  class="ov"
+                  href="#/shop"
+                  style="left: 7%; top: 65%; width: 22%; height: 9%"
+                  aria-label="Shop now"
+                ></a>
+              </div>
+              <div class="hero-side">
+                <div class="bn">
+                  <img data-src="Bannar" alt="Summer sale 75% off" /><a
+                    class="ov"
+                    href="#/shop?cat=Fruit+%26+Vegetables"
+                    style="left: 7%; top: 49%; width: 27%; height: 12%"
+                    aria-label="Shop now"
+                  ></a>
+                </div>
+                <div class="bn">
+                  <img
+                    data-src="Bannar (1)"
+                    alt="Special products deal of the month"
+                  /><a
+                    class="ov"
+                    href="#/shop?src=hot"
+                    style="left: 35%; top: 67%; width: 30%; height: 14%"
+                    aria-label="Shop now"
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="feats">
+              <div class="ft-i">
+                <i class="bi bi-truck"></i>
+                <div>
+                  <h6>Free Shipping</h6>
+                  <p>Free shipping on all your order</p>
+                </div>
+              </div>
+              <div class="ft-i">
+                <i class="bi bi-headset"></i>
+                <div>
+                  <h6>Customer Support 24/7</h6>
+                  <p>Instant access to Support</p>
+                </div>
+              </div>
+              <div class="ft-i">
+                <i class="bi bi-bag-check"></i>
+                <div>
+                  <h6>100% Secure Payment</h6>
+                  <p>We ensure your money is save</p>
+                </div>
+              </div>
+              <div class="ft-i">
+                <i class="bi bi-box-seam"></i>
+                <div>
+                  <h6>Money-Back Guarantee</h6>
+                  <p>30 Days Money-Back Guarantee</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec" id="categories">
+          <div class="wrap">
+            <div class="sh">
+              <h2>Popular Categories</h2>
+              <a href="#/shop" class="va"
+                >View All <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+            <div class="cats" id="catGrid"></div>
+          </div>
+        </section>
+
+        <section class="sec pt-0" id="popular">
+          <div class="wrap">
+            <div class="sh">
+              <h2>Popular Products</h2>
+              <a href="#/shop" class="va"
+                >View All <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+            <div class="pgrid" id="popGrid"></div>
+          </div>
+        </section>
+
+        <section class="sec pt-2">
+          <div class="wrap"><div class="b3" id="b3"></div></div>
+        </section>
+
+        <section class="sec gray" id="hot">
+          <div class="wrap">
+            <div class="sh">
+              <h2>Hot Deals</h2>
+              <a href="#/shop?src=hot" class="va"
+                >View All <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+            <div class="hdgrid" id="hotGrid"></div>
+          </div>
+        </section>
+
+        <section class="sec">
+          <div class="wrap"><div class="dis" id="disc"></div></div>
+        </section>
+
+        <section class="sec pt-0" id="featured">
+          <div class="wrap">
+            <div class="sh">
+              <h2>Featured Products</h2>
+              <a href="#/shop?src=featured" class="va"
+                >View All <i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+            <div class="pgrid" id="featGrid"></div>
+          </div>
+        </section>
+
+        <section class="sec pt-2" id="news">
+          <div class="wrap">
+            <div class="sh justify-content-center"><h2>Latest News</h2></div>
+            <div class="news" id="newsGrid"></div>
+          </div>
+        </section>
+
+        <section class="sec tst" id="testimonials">
+          <div class="wrap">
+            <div class="sh">
+              <h2>Client Testimonials</h2>
+              <div class="arr">
+                <button data-t="-1" aria-label="Previous">
+                  <i class="bi bi-arrow-left"></i></button
+                ><button class="g" data-t="1" aria-label="Next">
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+            <div class="ttrack" id="tTrack"></div>
+          </div>
+        </section>
+
+        <section class="sec pb-0">
+          <div class="wrap">
+            <div class="brands">
+              <a href="#/shop" class="b1">steps</a
+              ><a href="#/shop" class="b2">MANGO</a
+              ><a href="#/shop" class="b3x">food</a
+              ><a href="#/shop" class="b4">FOOD</a
+              ><a href="#/shop" class="b5">BOOK·OFF</a
+              ><a href="#/shop" class="b6">G Series</a>
+            </div>
+          </div>
+        </section>
+        <section class="sec insta">
+          <div class="wrap">
+            <h2>Follow us on Instagram</h2>
+            <div class="ig" id="igGrid"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ================= OTHER PAGES ================= -->
+      <div id="v-page" hidden></div>
+    </main>
+
+    <!-- NEWSLETTER -->
+    <section class="nl">
+      <div class="wrap">
+        <div>
+          <h4>Subcribe our Newsletter</h4>
+          <p>
+            Pellentesque eu nibh eget mauris congue mattis mattis nec tellus.
+            Phasellus imperdiet elit eu magna.
+          </p>
+        </div>
+        <form class="nf" id="nlForm">
+          <input
+            type="email"
+            placeholder="Your email address"
+            required
+            aria-label="Email"
+          /><button>Subscribe</button>
+        </form>
+        <div class="soc">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+            ><i class="bi bi-facebook"></i></a
+          ><a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Twitter"
+            ><i class="bi bi-twitter"></i></a
+          ><a
+            href="https://www.pinterest.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Pinterest"
+            ><i class="bi bi-pinterest"></i></a
+          ><a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            ><i class="bi bi-instagram"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="foot" id="footer">
+      <div class="wrap">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a href="#/home" class="logo"
+              ><svg><use href="#leaf" /></svg>Ecobazar</a
+            >
+            <p>
+              Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis
+              dui, eget bibendum magna congue nec.
+            </p>
+            <div class="fcont">
+              <a href="tel:2195550114"><span>(219) 555-0114</span></a
+              ><em>or</em
+              ><a href="mailto:Proxy@gmail.com"><span>Proxy@gmail.com</span></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-6 offset-lg-1">
+            <h6>My Account</h6>
+            <ul>
+              <li><a href="#/account">My Account</a></li>
+              <li><a href="#/orders">Order History</a></li>
+              <li><a href="#/cart">Shoping Cart</a></li>
+              <li><a href="#/wishlist">Wishlist</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-6">
+            <h6>Helps</h6>
+            <ul>
+              <li><a href="#/contact">Contact</a></li>
+              <li><a href="#/faqs">Faqs</a></li>
+              <li><a href="#/terms">Terms &amp; Condition</a></li>
+              <li><a href="#/privacy">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-1 col-6">
+            <h6>Proxy</h6>
+            <ul>
+              <li><a href="#/about">About</a></li>
+              <li><a href="#/shop">Shop</a></li>
+              <li><a href="#/shop?src=featured">Product</a></li>
+              <li><a href="#/track">Track Order</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-6">
+            <h6>Categories</h6>
+            <ul>
+              <li>
+                <a href="#/shop?cat=Fruit+%26+Vegetables"
+                  >Fruit &amp; Vegetables</a
+                >
+              </li>
+              <li><a href="#/shop?cat=Meat+%26+Fish">Meat &amp; Fish</a></li>
+              <li>
+                <a href="#/shop?cat=Bread+%26+Bakery">Bread &amp; Bakery</a>
+              </li>
+              <li>
+                <a href="#/shop?cat=Beauty+%26+Health">Beauty &amp; Health</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fbot">
+          <span>Ecobazar eCommerce © 2021. All Rights Reserved</span>
+          <div class="pay">
+            <span>Apple Pay</span
+            ><span><i class="bi bi-credit-card"></i>VISA</span
+            ><span>DISCOVER</span><span class="mc"><i></i><i></i></span
+            ><span><i class="bi bi-lock"></i>Secure Payment</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="totop" id="toTop" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- MINI CART -->
+    <div class="offcanvas offcanvas-end" id="cartPanel">
+      <div class="offcanvas-header">
+        <h5 class="fw-semibold">Shopping Cart</h5>
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column">
+        <div id="cartList" class="flex-grow-1"></div>
+        <div class="d-flex justify-content-between fw-semibold fs-5 my-3">
+          <span>Subtotal</span><span id="cartSub">$0.00</span>
+        </div>
+        <a
+          href="#/checkout"
+          class="btn-g text-center mb-2"
+          data-bs-dismiss="offcanvas"
+          >Checkout</a
+        >
+        <a href="#/cart" class="ghost text-center" data-bs-dismiss="offcanvas"
+          >View Cart</a
+        >
+      </div>
+    </div>
+
+    <!-- QUICK VIEW -->
+    <div class="modal fade" id="qvModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3">
+          <button class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+          <div class="row align-items-center g-3 p-2">
+            <div class="col-sm-5">
+              <img id="qvImg" alt="" style="max-height: 200px; margin: auto" />
+            </div>
+            <div class="col-sm-7">
+              <h5 id="qvName" class="fw-semibold"></h5>
+              <div class="st mb-2">★★★★<i>★</i></div>
+              <div class="fs-4 fw-semibold text-dark mb-2" id="qvPrice"></div>
+              <p class="small text-muted">
+                Fresh, organic and carefully selected. Delivered to your door
+                with free shipping and a 30-day money-back guarantee.
+              </p>
+              <button class="btn-g" id="qvAdd">Add to Cart</button>
+              <a href="#" class="ghost ms-1" id="qvMore" data-bs-dismiss="modal"
+                >Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSTAGRAM VIEWER -->
+    <div class="modal fade" id="igModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="position-relative">
+            <button class="ign p" data-ign="-1" aria-label="Previous">
+              <i class="bi bi-chevron-left"></i></button
+            ><img id="igImg" alt="" /><button
+              class="ign n"
+              data-ign="1"
+              aria-label="Next"
+            >
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+          <div class="igbar">
+            <div>
+              <b>@ecobazar_official</b>
+              <div class="small text-muted" id="igCap"></div>
+            </div>
+            <div>
+              <button class="ghost me-1" data-bs-dismiss="modal">Close</button
+              ><a
+                class="btn-g"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                ><i class="bi bi-instagram me-1"></i>View on Instagram</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGN IN / SIGN UP -->
+    <div class="modal fade" id="authModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="auth">
+            <div class="auth-side">
+              <i class="bub"></i><i class="bub"></i><i class="bub"></i>
+              <a class="logo" href="#/home"
+                ><svg><use href="#leaf" /></svg>Ecobazar</a
+              >
+              <h3>Fresh &amp; Healthy Organic Food, Delivered.</h3>
+              <p>
+                Join thousands of happy customers and enjoy fresh groceries at
+                your doorstep.
+              </p>
+              <ul class="p-0 m-0">
+                <li><i class="bi bi-truck"></i>Free shipping on every order</li>
+                <li><i class="bi bi-tag"></i>Exclusive member-only deals</li>
+                <li><i class="bi bi-shield-check"></i>100% secure payments</li>
+              </ul>
+            </div>
+            <div class="auth-main">
+              <button class="auth-x" data-bs-dismiss="modal" aria-label="Close">
+                <i class="bi bi-x-lg"></i>
+              </button>
+              <div class="atabs" id="atabs" data-a="in">
+                <button class="on" data-pane="tIn" data-a="in">Sign In</button
+                ><button data-pane="tUp" data-a="up">Sign Up</button>
+              </div>
+
+              <div class="apane on" id="tIn">
+                <h4>Welcome back 👋</h4>
+                <p>Sign in to continue shopping.</p>
+                <form id="lForm" novalidate>
+                  <div class="fi">
+                    <i class="bi bi-envelope"></i
+                    ><input
+                      type="email"
+                      name="email"
+                      placeholder="Email address"
+                      autocomplete="email"
+                    />
+                  </div>
+                  <div class="fi">
+                    <i class="bi bi-lock"></i
+                    ><input
+                      type="password"
+                      name="pass"
+                      placeholder="Password"
+                      autocomplete="current-password"
+                    /><button
+                      type="button"
+                      class="eye"
+                      data-eye
+                      aria-label="Show password"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div class="arow">
+                    <label><input type="checkbox" checked /> Remember me</label
+                    ><a href="#" data-pane="tFg" data-a="in"
+                      >Forgot password?</a
+                    >
+                  </div>
+                  <div class="aerr"></div>
+                  <button class="abtn">Sign In</button>
+                  <div class="swap">
+                    New to Ecobazar?
+                    <a href="#" data-pane="tUp" data-a="up"
+                      >Create an account</a
+                    >
+                  </div>
+                </form>
+              </div>
+
+              <div class="apane" id="tUp">
+                <h4>Create account 🌿</h4>
+                <p>It only takes a minute.</p>
+                <form id="rForm" novalidate>
+                  <div class="fi">
+                    <i class="bi bi-person"></i
+                    ><input
+                      name="name"
+                      placeholder="Full name"
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div class="fi">
+                    <i class="bi bi-envelope"></i
+                    ><input
+                      type="email"
+                      name="email"
+                      placeholder="Email address"
+                      autocomplete="email"
+                    />
+                  </div>
+                  <div class="fi">
+                    <i class="bi bi-lock"></i
+                    ><input
+                      type="password"
+                      name="pass"
+                      id="rPass"
+                      placeholder="Password (min 6 characters)"
+                      autocomplete="new-password"
+                    /><button
+                      type="button"
+                      class="eye"
+                      data-eye
+                      aria-label="Show password"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div class="str"><i id="strBar"></i></div>
+                  <div class="strl" id="strTxt"></div>
+                  <div class="fi">
+                    <i class="bi bi-shield-lock"></i
+                    ><input
+                      type="password"
+                      name="pass2"
+                      placeholder="Confirm password"
+                      autocomplete="new-password"
+                    /><button
+                      type="button"
+                      class="eye"
+                      data-eye
+                      aria-label="Show password"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div class="arow">
+                    <label
+                      ><input type="checkbox" name="terms" /> I agree to the
+                      <a href="#/terms" data-bs-dismiss="modal"
+                        >Terms &amp; Conditions</a
+                      ></label
+                    >
+                  </div>
+                  <div class="aerr"></div>
+                  <button class="abtn">Create Account</button>
+                  <div class="swap">
+                    Already have an account?
+                    <a href="#" data-pane="tIn" data-a="in">Sign in</a>
+                  </div>
+                </form>
+              </div>
+
+              <div class="apane" id="tFg">
+                <h4>Reset password 🔑</h4>
+                <p>Enter your account email and choose a new password.</p>
+                <form id="fForm" novalidate>
+                  <div class="fi">
+                    <i class="bi bi-envelope"></i
+                    ><input
+                      type="email"
+                      name="email"
+                      placeholder="Registered email"
+                    />
+                  </div>
+                  <div class="fi">
+                    <i class="bi bi-lock"></i
+                    ><input
+                      type="password"
+                      name="pass"
+                      placeholder="New password"
+                      autocomplete="new-password"
+                    /><button
+                      type="button"
+                      class="eye"
+                      data-eye
+                      aria-label="Show password"
+                    >
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div class="aerr"></div>
+                  <button class="abtn">Update Password</button>
+                  <div class="swap">
+                    <a href="#" data-pane="tIn" data-a="in"
+                      >← Back to sign in</a
+                    >
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="toastx" id="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      /* ======================= helpers ======================= */
+      const $ = (s, r = document) => r.querySelector(s);
+      const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+      const esc = (s) =>
+        String(s).replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[c],
+        );
+      const LS = {
+        get: (k, d) => {
+          try {
+            const v = localStorage.getItem(k);
+            return v ? JSON.parse(v) : d;
+          } catch (e) {
+            return d;
+          }
+        },
+        set: (k, v) => {
+          try {
+            localStorage.setItem(k, JSON.stringify(v));
+          } catch (e) {}
+        },
+      };
+      const EXT = ["png", "jpg", "jpeg", "webp", "avif", "jfif", "gif"]; // image extension auto-detect
+      const imgSrc = (n, i) => encodeURI("assets/images/" + n + "." + EXT[i]);
+      function fixImgs() {
+        $$("img[data-src]:not([data-ok])").forEach((el) => {
+          el.dataset.ok = 1;
+          let i = 0;
+          const next = () => {
+            if (i >= EXT.length) {
+              el.classList.add("x");
+              return;
+            }
+            el.src = imgSrc(el.dataset.src, i++);
+          };
+          el.onerror = next;
+          next();
+        });
+      }
+      let tmr;
+      const toast = (m) => {
+        const t = $("#toast");
+        t.textContent = m;
+        t.classList.add("s");
+        clearTimeout(tmr);
+        tmr = setTimeout(() => t.classList.remove("s"), 2300);
+      };
+      const shopUrl = (o) => "#/shop?" + new URLSearchParams(o);
+      const CUR = {
+        USD: ["$", 1],
+        EUR: ["€", 0.92],
+        GBP: ["£", 0.79],
+        PKR: ["Rs ", 280],
+      };
+      let cur = "USD";
+      const fmt = (n) => CUR[cur][0] + (n * CUR[cur][1]).toFixed(2);
+
+      /* ======================= data ======================= */
+      const CATS = [
+        "Fresh Fruit",
+        "Fresh Vegetables",
+        "Meat & Fish",
+        "Snacks",
+        "Beverages",
+        "Beauty & Health",
+        "Bread & Bakery",
+        "Baking Needs",
+        "Cooking",
+        "Diabetic Food",
+        "Dish Detergents",
+        "Oil",
+      ];
+      const P = (id, n, p, img, o) => ({
+        id,
+        n,
+        p,
+        img,
+        o: o || 0,
+        sale: !!o,
+        cat: /Apple|Malta|Mango/.test(n) ? "Fresh Fruit" : "Fresh Vegetables",
+      });
+      const POP = [
+        P("p1", "Green Apple", 14.99, "popular products/image 1", 20.99),
+        P("p2", "Fresh Indian Malta", 20, "popular products/Image 2"),
+        P("p3", "Chinese cabbage", 12, "popular products/Image 3"),
+        P("p4", "Green Lettuce", 9, "popular products/Image 4"),
+        P("p5", "Eggplant", 34, "popular products/Image 5"),
+        P("p6", "Big Potatoes", 20, "popular products/Image 6"),
+        P("p7", "Corn", 20, "popular products/Image 7"),
+        P("p8", "Fresh Cauliflower", 12, "popular products/Image 8"),
+        P("p9", "Green Capsicum", 9, "popular products/Image 9", 20.99),
+        P("p10", "Green Chili", 34, "popular products/Image 10"),
+      ];
+      const FEAT = [
+        P("f1", "Green Apple", 14.99, "featured products/Product Image", 20.99),
+        P(
+          "f2",
+          "Fresh Indian Malta",
+          20,
+          "featured products/Product Image (1)",
+        ),
+        P("f3", "Chinese cabbage", 12, "featured products/Product Image (2)"),
+        P("f4", "Green Lettuce", 9, "featured products/Product Image (3)"),
+        P("f5", "Eggplant", 34, "featured products/Product Image (4)"),
+      ];
+      const HOTBIG = {
+        id: "h0",
+        n: "Chinese cabbage (Hot Deal)",
+        p: 12,
+        o: 24,
+        sale: true,
+        cat: "Fresh Vegetables",
+        img: "Hot deals/BIG Products",
+      };
+      const HOT = [
+        P("h1", "Chinese cabbage", 12, "Hot deals/Product Image"),
+        P("h2", "Green Lettuce", 9, "Hot deals/Product Image (1)"),
+        P("h3", "Eggplant", 34, "Hot deals/Product Image (2)"),
+        P("h4", "Fresh Cauliflower", 12, "Hot deals/Product Image (3)"),
+        P("h5", "Green Capsicum", 9, "Hot deals/Product Image (4)", 20.99),
+        P("h6", "Green Chili", 34, "Hot deals/Product Image (5)"),
+        P("h7", "Big Potatoes", 12, "Hot deals/Product Image (6)"),
+        P("h8", "Corn", 12, "Hot deals/Product Image (7)"),
+        P("h9", "Red Chili", 12, "Hot deals/Product Image (8)"),
+        P("h10", "Red Tomatoes", 9, "Hot deals/Product Image (9)", 20.99),
+        P("h11", "Surjapur Mango", 34, "Hot deals/Product Image (10)"),
+      ];
+      const XP = {
+        "Meat & Fish": [
+          ["Fresh Sea Fish", 18],
+          ["Chicken Meat Pack", 15.5],
+        ],
+        Snacks: [
+          ["Mixed Snacks Pack", 8.99],
+          ["Crunchy Chips Combo", 6.5],
+        ],
+        Beverages: [
+          ["Soft Drinks Pack", 11],
+          ["Fresh Juice Bottles", 9.5],
+        ],
+        "Beauty & Health": [
+          ["Skin Care Set", 24],
+          ["Health Care Combo", 19.99],
+        ],
+        "Bread & Bakery": [
+          ["Bakery Basket", 13],
+          ["Jam & Honey Pack", 10.99],
+        ],
+        "Baking Needs": [
+          ["Baking Cocoa Mix", 7.99],
+          ["Baking Essentials", 12.49],
+        ],
+        Cooking: [
+          ["Cooking Essentials", 16],
+          ["Spice & Flour Pack", 14.25],
+        ],
+        "Diabetic Food": [
+          ["Diabetic Care Pack", 21],
+          ["Sugar-Free Combo", 17.5],
+        ],
+        "Dish Detergents": [
+          ["Dish Wash Liquids", 9.99],
+          ["Cleaning Combo", 13.5],
+        ],
+        Oil: [
+          ["Cooking Oil Bottles", 22],
+          ["Mustard Oil Pack", 18],
+        ],
+      };
+      const EXTRA = [];
+      CATS.forEach((c, i) =>
+        (XP[c] || []).forEach(([n, p], k) =>
+          EXTRA.push({
+            id: "x" + i + k,
+            n,
+            p,
+            o: 0,
+            sale: false,
+            cat: c,
+            img: "popular categories/image " + (i + 1),
+          }),
+        ),
+      );
+      const CATALOG = [
+        ...POP,
+        ...HOT.filter((h) => !POP.some((p) => p.n == h.n)),
+        ...EXTRA,
+      ];
+      const ALL = [...POP, ...FEAT, ...HOT, HOTBIG, ...EXTRA];
+      const find = (id) => ALL.find((x) => x.id == id);
+      const BODY = [
+        "Fresh produce is more than a meal — it is a daily habit that keeps your body energised and your mind clear. Choosing seasonal fruit and vegetables means better taste, better nutrition and a smaller footprint on the planet.",
+        "At Ecobazar every item is hand-picked from trusted farms, checked for quality and delivered to your door within hours. Our team works closely with local growers so you always get produce at its peak.",
+        "Try building your plate around colour: leafy greens, bright peppers, juicy citrus and crunchy roots. The more colourful your plate, the wider the range of vitamins, minerals and antioxidants you enjoy.",
+        "Small changes add up. Swap one processed snack a day for fresh fruit, cook at home more often and keep a bowl of seasonal produce where you can see it. Your body will thank you.",
+      ];
+      const BLOG = [
+        {
+          id: 1,
+          t: "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+          d: "18",
+          m: "NOV",
+          img: "latest news/Image",
+          lead: "Citrus fruit is one of the easiest ways to bring brightness and vitamin C to every meal, from breakfast juices to zesty salad dressings.",
+        },
+        {
+          id: 2,
+          t: "Eget lobortis lorem lacinia. Vivamus pharetra semper,",
+          d: "29",
+          m: "JAN",
+          img: "latest news/Image (1)",
+          lead: "Protein-rich eggs, creamy avocado and fresh greens make a simple plate that keeps you full and focused throughout the morning.",
+        },
+        {
+          id: 3,
+          t: "Maecenas blandit risus elementum mauris malesuada.",
+          d: "21",
+          m: "FEB",
+          img: "latest news/Image (2)",
+          lead: "A rainbow bowl of vegetables, chickpeas and seeds is the quickest way to get fibre, healthy fats and plant protein into one meal.",
+        },
+      ];
+      const IG = [
+        "Instagram Post",
+        "Instagram Post (1)",
+        "Instagram Post (2)",
+        "Instagram Post (3)",
+        "Instagram Post (4)",
+        "Instagram Post (5)",
+      ];
+      const IGCAP = [
+        "Juicy red tomatoes straight from the farm 🍅",
+        "Fresh green leaves after the morning rain 🌿",
+        "Colourful peppers, full of flavour 🌶️",
+        "Crisp baby spinach, packed with iron 🥬",
+        "A splash of fresh citrus 🍊",
+        "Vine-ripened tomatoes, ready to cook 🍅",
+      ];
+      const TEST = [
+        ["Robert Fox", "#8d6e63"],
+        ["Dianne Russell", "#7e57c2"],
+        ["Eleanor Pena", "#546e7a"],
+        ["Jacob Jones", "#ef6c00"],
+        ["Kristin Watson", "#00897b"],
+        ["Cody Fisher", "#3949ab"],
+      ];
+      const COUP = { ECO10: 0.1, FRESH20: 0.2 };
+      const FAQ = [
+        [
+          "How long does delivery take?",
+          "Orders placed before 2 PM are delivered the same day. Other orders arrive within 24 hours, and shipping is always free.",
+        ],
+        [
+          "What is your return policy?",
+          "If you are not happy with any item, contact us within 30 days and we will refund or replace it — no questions asked.",
+        ],
+        [
+          "How can I track my order?",
+          "Open Track Order from the Pages menu, enter your order number (for example EB1234567) and you will see the live status.",
+        ],
+        [
+          "Which payment methods do you accept?",
+          "We accept Cash on Delivery, Visa, Mastercard, Discover and Apple Pay. All online payments are secured.",
+        ],
+        [
+          "Are your products really organic?",
+          "Yes. Our fruit and vegetables come from certified farms and are checked for freshness before packing.",
+        ],
+        [
+          "Can I change or cancel my order?",
+          "You can change or cancel an order any time before it is shipped by contacting our 24/7 support team.",
+        ],
+        [
+          "Do you have discount coupons?",
+          "Yes! Use code ECO10 for 10% off or FRESH20 for 20% off on the cart page.",
+        ],
+        [
+          "How do I contact customer support?",
+          "Call (219) 555-0114, email Proxy@gmail.com or use the form on our Contact Us page.",
+        ],
+      ];
+      const TERMS = [
+        [
+          "Acceptance of Terms",
+          "By accessing and using Ecobazar you accept and agree to be bound by these terms. If you do not agree, please do not use the site.",
+        ],
+        [
+          "Orders & Pricing",
+          "All prices are shown in your selected currency and may change without notice. An order is confirmed only after you receive an order number.",
+        ],
+        [
+          "Shipping & Delivery",
+          "Shipping is free on all orders. Delivery times are estimates and may vary because of weather, holidays or high demand.",
+        ],
+        [
+          "Returns & Refunds",
+          "Perishable goods must be reported within 24 hours of delivery. Other items can be returned within 30 days in their original condition.",
+        ],
+        [
+          "User Accounts",
+          "You are responsible for keeping your login details secure and for all activity that happens under your account.",
+        ],
+        [
+          "Changes to Terms",
+          "We may update these terms from time to time. Continued use of the site means you accept the updated terms.",
+        ],
+      ];
+      const PRIV = [
+        [
+          "Information We Collect",
+          "We collect your name, email, phone number, delivery address and order history so that we can process orders and support you.",
+        ],
+        [
+          "How We Use Information",
+          "Your information is used to deliver orders, send order updates, improve our service and, if you agree, share offers and news.",
+        ],
+        [
+          "Cookies & Local Storage",
+          "We store your cart, wishlist and preferences in your browser so they are still there when you return.",
+        ],
+        [
+          "Sharing of Data",
+          "We never sell your personal data. We only share it with delivery and payment partners who need it to complete your order.",
+        ],
+        [
+          "Your Rights",
+          "You can view, update or delete your account information at any time from the My Account page or by contacting us.",
+        ],
+        [
+          "Contact",
+          "Questions about this policy? Email Proxy@gmail.com or call (219) 555-0114.",
+        ],
+      ];
+
+      /* ======================= state ======================= */
+      let cart = LS.get("eco_cart", {}),
+        wish = new Set(LS.get("eco_wish", [])),
+        coupon = LS.get("eco_coupon", "");
+      // Start every fresh page load logged out. Keep registered accounts saved.
+      let user = null,
+        users = LS.get("eco_users", []),
+        orders = LS.get("eco_orders", []);
+      let page = "home",
+        pending = null;
+      const cartIds = () => Object.keys(cart).filter((k) => find(k));
+      const totals = () => {
+        const sub = cartIds().reduce((a, k) => a + find(k).p * cart[k], 0);
+        const d = sub * (COUP[coupon] || 0);
+        return { sub, d, tot: sub - d };
+      };
+      const save = () => {
+        LS.set("eco_cart", cart);
+        LS.set("eco_wish", [...wish]);
+        LS.set("eco_coupon", coupon);
+      };
+
+      /* ======================= shared templates ======================= */
+      const stars = '<div class="st">★★★★<i>★</i></div>';
+      const card = (
+        p,
+      ) => `<div class="pc">${p.sale ? '<span class="bdg red">Sale 50%</span>' : ""}
+  <div class="pa"><button class="ib ${wish.has(p.id) ? "on" : ""}" data-fav="${p.id}" aria-label="Wishlist"><i class="bi bi-heart${wish.has(p.id) ? "-fill" : ""}"></i></button><button class="ib" data-view="${p.id}" aria-label="Quick view"><i class="bi bi-eye"></i></button></div>
+  <a class="pimg" href="#/product/${p.id}"><img data-src="${p.img}" alt="${esc(p.n)}"></a>
+  <div class="pinfo"><div><a class="pn" href="#/product/${p.id}">${esc(p.n)}</a><div class="pp">${fmt(p.p)}${p.o ? `<s>${fmt(p.o)}</s>` : ""}</div>${stars}</div>
+  <button class="bag" data-add="${p.id}" aria-label="Add to cart"><i class="bi bi-handbag"></i></button></div></div>`;
+      const newsCards = () =>
+        BLOG.map(
+          (
+            n,
+          ) => `<article class="nw"><a href="#/blog/${n.id}"><img data-src="${n.img}" alt=""></a><div class="in">
+  <div class="nm"><span><i class="bi bi-tag"></i><b>Food</b></span><span><i class="bi bi-person"></i>By <b>Admin</b></span><span><i class="bi bi-chat-square"></i><b>65 Comments</b></span></div>
+  <h5><a href="#/blog/${n.id}">${n.t}</a></h5><a href="#/blog/${n.id}" class="rm">Read More <i class="bi bi-arrow-right"></i></a></div></article>`,
+        ).join("");
+      const BANS = [
+        [
+          "Bannar 1",
+          "Sale of the Month",
+          "#/shop?src=hot",
+          "left:31%;top:35%;width:38%;height:10%",
+        ],
+        [
+          "Bannar 2",
+          "Low-Fat Meat",
+          shopUrl({ cat: "Meat & Fish" }),
+          "left:31%;top:33.5%;width:38%;height:9.5%",
+        ],
+        [
+          "Bannar 3",
+          "100% Fresh Fruit",
+          shopUrl({ cat: "Fresh Fruit" }),
+          "left:31%;top:33.5%;width:38%;height:9.5%",
+        ],
+      ];
+      const bansHtml = () =>
+        BANS.map(
+          (b) =>
+            `<div class="bn"><img data-src="${b[0]}" alt="${b[1]}"><a class="ov" href="${b[2]}" style="${b[3]}" aria-label="Shop now"></a></div>`,
+        ).join("");
+      const discHtml =
+        '<img data-src="Discount Bannar" alt="Summer sale 37% off"><a class="ov" href="#/shop" style="left:62.5%;top:68%;width:15%;height:15%" aria-label="Shop now"></a>';
+      const crumb = (...t) =>
+        `<div class="crumb"><div class="wrap"><a href="#/home"><i class="bi bi-house-door"></i></a>${t.map((x) => `<i class="bi bi-chevron-right"></i>${Array.isArray(x) ? `<a href="${x[1]}">${x[0]}</a>` : `<span>${x}</span>`}`).join("")}</div></div>`;
+      const sec = (inner, cls = "") =>
+        `<section class="sec ${cls}"><div class="wrap">${inner}</div></section>`;
+      const emptyBox = (ic, t, s, href, btn) =>
+        `<div class="empty-box"><i class="bi ${ic}"></i><h4>${t}</h4><p class="text-muted">${s}</p><a href="${href}" class="btn-g">${btn}</a></div>`;
+      const pw = (name, ph) =>
+        `<div class="fi"><i class="bi bi-lock"></i><input type="password" name="${name}" placeholder="${ph}"><button type="button" class="eye" data-eye aria-label="Show password"><i class="bi bi-eye"></i></button></div>`;
+
+      /* ======================= home render ======================= */
+      function renderAll() {
+        $("#popGrid").innerHTML = POP.map(card).join("");
+        $("#featGrid").innerHTML = FEAT.map(card).join("");
+        $("#hotGrid").innerHTML =
+          `<div class="hdbig"><img data-src="${HOTBIG.img}" alt="Hot deal"><a class="zl" href="#/product/h0" aria-label="View product"></a>
+    <button class="z" data-fav="h0" style="left:3%;top:56%;width:11%;height:9%" aria-label="Wishlist"></button>
+    <button class="z" data-add="h0" style="left:15%;top:56%;width:70%;height:9%" aria-label="Add to cart"></button>
+    <button class="z" data-view="h0" style="right:3%;top:56%;width:11%;height:9%" aria-label="Quick view"></button></div>` +
+          HOT.map(card).join("");
+        fixImgs();
+      }
+      $("#catGrid").innerHTML = CATS.map(
+        (c, i) =>
+          `<a class="cat ${i == 1 ? "on" : ""}" href="${shopUrl({ cat: c })}"><img data-src="popular categories/image ${i + 1}" alt="${c}"><span>${c}</span></a>`,
+      ).join("");
+      $("#b3").innerHTML = bansHtml();
+      $("#disc").innerHTML = discHtml;
+      $("#newsGrid").innerHTML = newsCards();
+      $("#igGrid").innerHTML = IG.map(
+        (i, k) =>
+          `<a href="#" data-ig="${k}"><img data-src="follow instagram/${i}" alt="Instagram post"></a>`,
+      ).join("");
+      $("#tTrack").innerHTML = TEST.map(
+        ([
+          n,
+          c,
+        ]) => `<div class="tc"><div class="q"><i class="bi bi-quote"></i></div>
+  <p>Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget</p>
+  <div class="au"><div class="who"><span class="av" style="background:${c}">${n
+    .split(" ")
+    .map((w) => w[0])
+    .join(
+      "",
+    )}</span><div><b>${n}</b><small>Customer</small></div></div><div class="st">★★★★★</div></div></div>`,
+      ).join("");
+
+      /* ======================= pages ======================= */
+      const R = {};
+      R.home2 = () =>
+        crumb("Home 02") +
+        sec(`<div class="dis">${discHtml}</div>`) +
+        sec(`<div class="b3">${bansHtml()}</div>`, "pt-0") +
+        `<section class="sec gray"><div class="wrap"><div class="sh"><h2>Hot Deals</h2><a href="#/shop?src=hot" class="va">View All <i class="bi bi-arrow-right"></i></a></div><div class="pgrid">${HOT.slice(0, 10).map(card).join("")}</div></div></section>` +
+        sec(
+          `<div class="sh"><h2>Featured Products</h2><a href="#/shop?src=featured" class="va">View All <i class="bi bi-arrow-right"></i></a></div><div class="pgrid">${FEAT.map(card).join("")}</div>`,
+        ) +
+        sec(
+          `<div class="sh justify-content-center"><h2>Latest News</h2></div><div class="news">${newsCards()}</div>`,
+          "pt-0",
+        );
+
+      R.shop = (q) => {
+        const cat = q.get("cat") || "",
+          s = (q.get("q") || "").trim(),
+          src = q.get("src") || "",
+          sort = q.get("sort") || "",
+          min = +q.get("min") || 0,
+          max = +q.get("max") || 0;
+        let list = src == "hot" ? HOT.slice() : CATALOG.slice();
+        if (cat)
+          list = list.filter((p) =>
+            cat == "Fruit & Vegetables"
+              ? /Fresh (Fruit|Vegetables)/.test(p.cat)
+              : p.cat == cat,
+          );
+        if (s)
+          list = list.filter((p) =>
+            (p.n + " " + p.cat).toLowerCase().includes(s.toLowerCase()),
+          );
+        if (min) list = list.filter((p) => p.p >= min);
+        if (max) list = list.filter((p) => p.p <= max);
+        if (sort == "lh") list.sort((a, b) => a.p - b.p);
+        if (sort == "hl") list.sort((a, b) => b.p - a.p);
+        if (sort == "az") list.sort((a, b) => a.n.localeCompare(b.n));
+        const title =
+          src == "hot"
+            ? "Hot Deals"
+            : src == "featured"
+              ? "Featured Products"
+              : cat || (s ? `Search results for "${esc(s)}"` : "All Products");
+        const base = {
+          ...(src ? { src } : {}),
+          ...(s ? { q: s } : {}),
+          ...(cat ? { cat } : {}),
+          ...(min ? { min } : {}),
+          ...(max ? { max } : {}),
+        };
+        const chips = [
+          cat && ["Category: " + cat, { ...base, cat: "" }],
+          s && ["Search: " + s, { ...base, q: "" }],
+          (min || max) && [
+            `Price: ${min || 0} - ${max || "∞"}`,
+            { ...base, min: "", max: "" },
+          ],
+        ]
+          .filter(Boolean)
+          .map(
+            ([t, o]) =>
+              `<span class="chip">${esc(t)} <a href="${shopUrl(Object.fromEntries(Object.entries(o).filter(([, v]) => v)))}"><i class="bi bi-x-lg"></i></a></span>`,
+          )
+          .join("");
+        return (
+          crumb(["Shop", "#/shop"], cat || title) +
+          sec(`<div class="row g-4"><aside class="col-lg-3 shop-side">
+    <div class="box"><h6>All Categories</h6><div class="cl"><a href="#/shop" class="${!cat ? "on" : ""}">All Products <small>${CATALOG.length}</small></a>${CATS.map((c) => `<a href="${shopUrl({ cat: c })}" class="${cat == c ? "on" : ""}">${c} <small>${CATALOG.filter((p) => p.cat == c).length}</small></a>`).join("")}</div></div>
+    <div class="box"><h6>Price</h6><form id="pf" data-base='${esc(JSON.stringify(base))}'><div class="d-flex gap-2 mb-3"><input class="form-control" type="number" min="0" name="min" placeholder="Min" value="${min || ""}"><input class="form-control" type="number" min="0" name="max" placeholder="Max" value="${max || ""}"></div><button class="btn-g w-100 py-2">Filter</button></form></div>
+    <div class="box"><h6>Coupons</h6><p class="small mb-1">Use <b>ECO10</b> for 10% off</p><p class="small mb-0">Use <b>FRESH20</b> for 20% off</p></div></aside>
+    <div class="col-lg-9"><h1 class="pghead">${title}</h1><div class="tools"><div>${chips || ""}<span class="text-muted">Showing <b class="text-dark">${list.length}</b> results</span></div>
+    <select data-sort data-base='${esc(JSON.stringify(base))}'><option value="">Sort by: Latest</option><option value="lh" ${sort == "lh" ? "selected" : ""}>Price: Low to High</option><option value="hl" ${sort == "hl" ? "selected" : ""}>Price: High to Low</option><option value="az" ${sort == "az" ? "selected" : ""}>Name: A to Z</option></select></div>
+    ${list.length ? `<div class="pgrid g3">${list.map(card).join("")}</div>` : emptyBox("bi-search", "No products found", "Try a different search or clear the filters.", "#/shop", "Show all products")}</div></div>`)
+        );
+      };
+
+      R.product = (q, seg) => {
+        const p = find(seg[1]);
+        if (!p) return R[404]();
+        const rev = LS.get("eco_rev_" + p.n, []),
+          related = CATALOG.filter((x) => x.cat == p.cat && x.n != p.n).slice(
+            0,
+            4,
+          );
+        const inW = wish.has(p.id);
+        return (
+          crumb(
+            ["Shop", "#/shop"],
+            [p.cat, shopUrl({ cat: p.cat })],
+            esc(p.n),
+          ) +
+          sec(`<div class="row g-4 pd">
+    <div class="col-lg-5"><div class="pd-img">${p.sale ? '<span class="bdg red">Sale 50%</span>' : ""}<img data-src="${p.img}" alt="${esc(p.n)}"></div></div>
+    <div class="col-lg-7"><h1>${esc(p.n)} <span class="badge-s fs-6 align-middle">In Stock</span></h1><div class="d-flex gap-2 align-items-center"><div class="st fs-6">★★★★<i>★</i></div><small class="text-muted">${4 + rev.length} Review${rev.length ? "s" : ""}</small></div>
+      <div class="price">${fmt(p.p)}${p.o ? `<s>${fmt(p.o)}</s><span class="off">50% Off</span>` : ""}</div>
+      <p class="text-muted">Fresh, carefully selected ${esc(p.n.toLowerCase())} delivered straight to your door. Packed with natural goodness, free shipping on every order and a 30-day money-back guarantee.</p>
+      <div class="qrow"><div class="qbig"><button data-q="-1">−</button><input id="pdq" value="1" readonly><button data-q="1">+</button></div>
+        <button class="btn-g" data-addq="${p.id}"><i class="bi bi-handbag me-2"></i>Add to Cart</button><button class="wbtn ${inW ? "on" : ""}" data-fav="${p.id}" aria-label="Wishlist"><i class="bi bi-heart${inW ? "-fill" : ""}"></i></button></div>
+      <div class="meta"><div><b>Category:</b> <a href="${shopUrl({ cat: p.cat })}" class="text-success">${p.cat}</a></div><div><b>Shipping:</b> Free shipping on all orders</div><div><b>Share:</b> <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="me-2"><i class="bi bi-facebook"></i></a><a href="https://twitter.com/" target="_blank" rel="noopener" class="me-2"><i class="bi bi-twitter"></i></a><a href="https://www.pinterest.com/" target="_blank" rel="noopener"><i class="bi bi-pinterest"></i></a></div></div></div></div>
+    <div class="mt-5"><ul class="nav nav-tabs"><li><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#t1">Description</button></li><li><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t2">Additional Information</button></li><li><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t3">Reviews (${rev.length})</button></li></ul>
+    <div class="tab-content pt-4"><div class="tab-pane fade show active" id="t1"><p class="text-muted" style="line-height:1.9">${BODY[0]} ${BODY[1]}</p></div>
+      <div class="tab-pane fade" id="t2"><table class="tbl"><tr><td><b>Weight</b></td><td>1 kg</td></tr><tr><td><b>Origin</b></td><td>Local certified farms</td></tr><tr><td><b>Type</b></td><td>Organic</td></tr><tr><td><b>Shelf life</b></td><td>5–7 days refrigerated</td></tr></table></div>
+      <div class="tab-pane fade" id="t3"><div id="revList">${rev.map((r) => `<div class="rev"><span class="av" style="background:#00b207">${esc(r.n[0])}</span><div><b>${esc(r.n)}</b> <span class="st">${"★".repeat(r.s)}</span><p class="mb-0 text-muted">${esc(r.t)}</p></div></div>`).join("") || '<p class="text-muted">No reviews yet. Be the first to review this product.</p>'}</div>
+        <form id="revForm" data-n="${esc(p.n)}" class="mt-4"><div class="row g-2"><div class="col-md-4"><input class="form-control" name="n" placeholder="Your name" value="${user ? esc(user.name) : ""}" required></div><div class="col-md-3"><select class="form-control" name="s"><option value="5">5 Stars</option><option value="4">4 Stars</option><option value="3">3 Stars</option></select></div><div class="col-12"><textarea class="form-control" name="t" rows="3" placeholder="Write your review" required></textarea></div></div><button class="btn-g mt-3">Submit Review</button></form></div></div></div>
+    ${related.length ? `<div class="sh mt-5"><h2>Related Products</h2><a href="${shopUrl({ cat: p.cat })}" class="va">View All <i class="bi bi-arrow-right"></i></a></div><div class="pgrid g4">${related.map(card).join("")}</div>` : ""}`)
+        );
+      };
+
+      R.blog = (q, seg) => {
+        if (!seg[1])
+          return (
+            crumb("Latest News") +
+            sec(
+              `<h1 class="pghead">Latest News</h1><div class="news">${newsCards()}</div>`,
+            )
+          );
+        const b = BLOG.find((x) => x.id == seg[1]);
+        if (!b) return R[404]();
+        const cms = LS.get("eco_cm_" + b.id, [
+          [
+            "Eleanor Pena",
+            "Great article! I started adding more greens to my meals and feel so much better.",
+          ],
+          [
+            "Robert Fox",
+            "Thanks for the tips — the colourful plate idea is really easy to follow.",
+          ],
+        ]);
+        const prev = BLOG.find((x) => x.id == b.id - 1),
+          next = BLOG.find((x) => x.id == b.id + 1);
+        return (
+          crumb(["Blog", "#/blog"], "Blog Details") +
+          sec(`<div class="row g-4"><div class="col-lg-8 bd"><img class="bd-img" data-src="${b.img}" alt="">
+    <div class="nm mt-3"><span><i class="bi bi-calendar3"></i><b>${b.d} ${b.m}</b></span><span><i class="bi bi-tag"></i><b>Food</b></span><span><i class="bi bi-person"></i>By <b>Admin</b></span><span><i class="bi bi-chat-square"></i><b>${cms.length + 63} Comments</b></span></div>
+    <h1>${b.t}</h1><p>${b.lead}</p><p>${BODY[0]}</p><blockquote>“Let food be thy medicine and medicine be thy food.”</blockquote><p>${BODY[1]}</p><p>${BODY[2]}</p><p>${BODY[3]}</p>
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 py-3 my-4 border-top border-bottom"><span><b>Tags:</b> <span class="chip">Food</span><span class="chip">Fresh</span><span class="chip">Healthy</span></span>
+      <span><b>Share:</b> <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="ms-2"><i class="bi bi-facebook"></i></a><a href="https://twitter.com/" target="_blank" rel="noopener" class="ms-2"><i class="bi bi-twitter"></i></a><a href="https://www.pinterest.com/" target="_blank" rel="noopener" class="ms-2"><i class="bi bi-pinterest"></i></a></span></div>
+    <div class="d-flex justify-content-between gap-2 mb-4">${prev ? `<a class="ghost" href="#/blog/${prev.id}">← Previous Post</a>` : "<span></span>"}${next ? `<a class="ghost" href="#/blog/${next.id}">Next Post →</a>` : ""}</div>
+    <h4 class="mb-2">Comments</h4><div id="cmList">${cms.map((c) => `<div class="cm"><span class="av" style="background:#546e7a">${esc(c[0][0])}</span><div><b class="text-dark">${esc(c[0])}</b><p class="mb-0 text-muted">${esc(c[1])}</p></div></div>`).join("")}</div>
+    <form id="cmForm" data-id="${b.id}" class="mt-4"><h5 class="mb-3">Leave a comment</h5><div class="row g-2"><div class="col-md-6"><input class="form-control" name="n" placeholder="Your name" value="${user ? esc(user.name) : ""}" required></div><div class="col-12"><textarea class="form-control" name="t" rows="4" placeholder="Write your comment" required></textarea></div></div><button class="btn-g mt-3">Post Comment</button></form></div>
+    <aside class="col-lg-4"><div class="box mb-3"><h5>Recent Posts</h5>${BLOG.map((x) => `<a class="rp" href="#/blog/${x.id}"><img data-src="${x.img}" alt=""><span>${x.t.slice(0, 48)}…</span></a>`).join("")}</div>
+    <div class="box"><h5>Popular Tags</h5>${["Food", "Fresh", "Healthy", "Organic", "Fruit", "Vegetables"].map((t) => `<a class="chip" href="${shopUrl({ q: t })}">${t}</a>`).join("")}</div></aside></div>`)
+        );
+      };
+
+      R.about = () =>
+        crumb("About Us") +
+        sec(
+          `<div class="row g-4 align-items-center"><div class="col-lg-6"><img class="bd-img" data-src="Bannar Big" alt=""></div><div class="col-lg-6"><h1 class="pghead">100% Trusted Organic Food Store</h1><p class="text-muted" style="line-height:1.9">Ecobazar started with one simple idea: everyone deserves fresh, healthy food at a fair price. We work directly with certified local farms and deliver to your door within hours of harvest.</p><p class="text-muted" style="line-height:1.9">From crisp vegetables and juicy fruit to pantry essentials, every product is quality-checked and packed with care by our team.</p><a class="btn-g" href="#/shop">Start Shopping</a></div></div>`,
+        ) +
+        `<section class="sec gray"><div class="wrap"><div class="row g-3">${[
+          ["bi-truck", "Free Shipping", "On all your orders"],
+          ["bi-headset", "Support 24/7", "Instant access to support"],
+          ["bi-shield-check", "Secure Payment", "We ensure your money is safe"],
+          ["bi-box-seam", "Money-Back", "30 days guarantee"],
+        ]
+          .map(
+            (a) =>
+              `<div class="col-md-3 col-6"><div class="box icbox"><i class="bi ${a[0]}"></i><h6>${a[1]}</h6><p class="small text-muted mb-0">${a[2]}</p></div></div>`,
+          )
+          .join("")}</div></div></section>` +
+        sec(
+          `<div class="row">${[
+            ["500+", "Farm Partners"],
+            ["12K+", "Happy Customers"],
+            ["3,000+", "Products"],
+            ["25", "Cities Served"],
+          ]
+            .map(
+              (a) =>
+                `<div class="col-6 col-md-3"><div class="stat"><b>${a[0]}</b>${a[1]}</div></div>`,
+            )
+            .join("")}</div>`,
+        ) +
+        `<section class="sec tst"><div class="wrap"><div class="sh justify-content-center"><h2>Our Team</h2></div><div class="row g-3">${[
+          ["Robert Fox", "Founder & CEO", "#8d6e63"],
+          ["Dianne Russell", "Head of Sourcing", "#7e57c2"],
+          ["Eleanor Pena", "Operations", "#546e7a"],
+          ["Jacob Jones", "Customer Care", "#ef6c00"],
+        ]
+          .map(
+            (a) =>
+              `<div class="col-md-3 col-6"><div class="box text-center"><span class="av mx-auto mb-2" style="background:${a[2]};width:64px;height:64px;font-size:20px">${a[0]
+                .split(" ")
+                .map((w) => w[0])
+                .join(
+                  "",
+                )}</span><b class="text-dark d-block">${a[0]}</b><small class="text-muted">${a[1]}</small></div></div>`,
+          )
+          .join("")}</div></div></section>`;
+
+      R.contact = () =>
+        crumb("Contact Us") +
+        sec(`<div class="row g-3 mb-4">${[
+          ["bi-geo-alt", "Address", "Lincoln- 344, Illinois, Chicago, USA"],
+          ["bi-telephone", "Phone", "(219) 555-0114"],
+          ["bi-envelope", "Email", "Proxy@gmail.com"],
+        ]
+          .map(
+            (a) =>
+              `<div class="col-md-4"><div class="box icbox"><i class="bi ${a[0]}"></i><h6>${a[1]}</h6><p class="text-muted mb-0">${a[2]}</p></div></div>`,
+          )
+          .join("")}</div>
+  <div class="row g-4"><div class="col-lg-6"><div class="box"><h5>Send us a message</h5><form id="ctForm"><div class="row g-2"><div class="col-md-6"><input class="form-control" placeholder="Your name" required></div><div class="col-md-6"><input class="form-control" type="email" placeholder="Email" required></div><div class="col-12"><input class="form-control" placeholder="Subject" required></div><div class="col-12"><textarea class="form-control" rows="5" placeholder="Message" required></textarea></div></div><button class="btn-g mt-3">Send Message</button></form></div></div>
+  <div class="col-lg-6"><iframe title="map" style="width:100%;height:100%;min-height:340px;border:0;border-radius:8px" loading="lazy" src="https://maps.google.com/maps?q=Chicago%20Illinois&output=embed"></iframe></div></div>`);
+
+      R.faqs = () =>
+        crumb("FAQs") +
+        sec(
+          `<h1 class="pghead">Frequently Asked Questions</h1><div class="accordion" id="faqAcc">${FAQ.map((f, i) => `<div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button ${i ? "collapsed" : ""}" data-bs-toggle="collapse" data-bs-target="#fq${i}">${f[0]}</button></h2><div id="fq${i}" class="accordion-collapse collapse ${i ? "" : "show"}" data-bs-parent="#faqAcc"><div class="accordion-body text-muted">${f[1]}</div></div></div>`).join("")}</div>`,
+        );
+      const policy = (t, d) =>
+        crumb(t) +
+        sec(
+          `<div class="policy"><h1 class="pghead">${t}</h1><p class="text-muted">Last updated: January 2021</p>${d.map((x, i) => `<h5>${i + 1}. ${x[0]}</h5><p class="text-muted">${x[1]}</p>`).join("")}</div>`,
+        );
+      R.terms = () => policy("Terms & Condition", TERMS);
+      R.privacy = () => policy("Privacy Policy", PRIV);
+
+      R.wishlist = () => {
+        const l = [...wish].map(find).filter(Boolean);
+        return (
+          crumb("Wishlist") +
+          sec(
+            `<h1 class="pghead">My Wishlist</h1>` +
+              (l.length
+                ? `<div class="pgrid g4">${l.map(card).join("")}</div>`
+                : emptyBox(
+                    "bi-heart",
+                    "Your wishlist is empty",
+                    "Tap the heart on any product to save it here.",
+                    "#/shop",
+                    "Browse products",
+                  )),
+          )
+        );
+      };
+
+      R.cart = () => {
+        const ids = cartIds(),
+          t = totals();
+        return (
+          crumb("Shopping Cart") +
+          sec(
+            `<h1 class="pghead">My Shopping Cart</h1>` +
+              (!ids.length
+                ? emptyBox(
+                    "bi-handbag",
+                    "Your cart is empty",
+                    "Add some fresh products to get started.",
+                    "#/shop",
+                    "Continue shopping",
+                  )
+                : `<div class="row g-4"><div class="col-lg-8"><div class="box p-0 table-responsive"><table class="tbl"><thead><tr><th>Product</th><th>Price</th><th>Quantity</th><th>Subtotal</th><th></th></tr></thead><tbody>${ids
+                    .map((k) => {
+                      const p = find(k);
+                      return `<tr><td><a class="nm2" href="#/product/${k}"><img data-src="${p.img}" alt="">${esc(p.n)}</a></td><td>${fmt(p.p)}</td><td><div class="qty"><button data-chg="${k}" data-d="-1">−</button><span>${cart[k]}</span><button data-chg="${k}" data-d="1">+</button></div></td><td><b class="text-dark">${fmt(p.p * cart[k])}</b></td><td><button class="rmv" data-rm="${k}" aria-label="Remove"><i class="bi bi-x-circle"></i></button></td></tr>`;
+                    })
+                    .join("")}</tbody></table></div>
+    <div class="d-flex justify-content-between flex-wrap gap-2 mt-3"><a href="#/shop" class="ghost">Return to Shop</a><button class="ghost" data-clear>Clear Cart</button></div></div>
+    <div class="col-lg-4"><div class="box"><h5>Cart Total</h5><form id="couponForm" class="d-flex gap-2 mb-3"><input class="form-control" name="c" placeholder="Coupon code (ECO10)" value="${coupon}"><button class="btn-g py-2 px-3">Apply</button></form>
+      <div class="ln"><span>Subtotal</span><b>${fmt(t.sub)}</b></div><div class="ln"><span>Shipping</span><b class="text-success">Free</b></div>${t.d ? `<div class="ln"><span>Discount (${coupon})</span><b class="text-danger">-${fmt(t.d)}</b></div>` : ""}<div class="ln tot"><span>Total</span><span>${fmt(t.tot)}</span></div>
+      <a href="#/checkout" class="btn-g w-100 text-center mt-3">Proceed to Checkout</a></div></div></div>`),
+          )
+        );
+      };
+
+      R.checkout = () => {
+        const ids = cartIds(),
+          t = totals();
+        if (!ids.length)
+          return (
+            crumb(["Cart", "#/cart"], "Checkout") +
+            sec(
+              emptyBox(
+                "bi-handbag",
+                "Nothing to check out",
+                "Your cart is empty.",
+                "#/shop",
+                "Go to shop",
+              ),
+            )
+          );
+        const u = user || {};
+        return (
+          crumb(["Cart", "#/cart"], "Checkout") +
+          sec(`<h1 class="pghead">Checkout</h1><form id="coForm" novalidate><div class="row g-4"><div class="col-lg-7"><div class="box"><h5>Billing Information</h5><div class="row g-2">
+    <div class="col-md-6 fld"><label>Full name</label><input class="form-control" name="fname" value="${esc(u.name || "")}" required></div><div class="col-md-6 fld"><label>Email</label><input class="form-control" type="email" name="email" value="${esc(u.email || "")}" required></div>
+    <div class="col-md-6 fld"><label>Phone</label><input class="form-control" name="phone" required></div><div class="col-md-6 fld"><label>City</label><input class="form-control" name="city" required></div>
+    <div class="col-12 fld"><label>Street address</label><input class="form-control" name="addr" required></div><div class="col-12 fld"><label>Order notes (optional)</label><textarea class="form-control" name="note" rows="2"></textarea></div></div>
+    <h5 class="mt-3">Payment Method</h5>${[
+      ["cod", "Cash on Delivery"],
+      ["card", "Credit / Debit Card"],
+      ["wallet", "Apple Pay"],
+    ]
+      .map(
+        (m, i) =>
+          `<label class="d-flex align-items-center gap-2 py-2"><input type="radio" name="pay" value="${m[1]}" ${i ? "" : "checked"}> ${m[1]}</label>`,
+      )
+      .join("")}
+    <div id="cardF" class="row g-2 mt-1" hidden><div class="col-12"><input class="form-control" name="cn" placeholder="Card number" maxlength="19"></div><div class="col-6"><input class="form-control" name="ce" placeholder="MM/YY" maxlength="5"></div><div class="col-6"><input class="form-control" name="cc" placeholder="CVC" maxlength="4"></div></div>
+    <div class="aerr mt-2" id="coErr"></div></div></div>
+    <div class="col-lg-5"><div class="box"><h5>Order Summary</h5>${ids
+      .map((k) => {
+        const p = find(k);
+        return `<div class="ln"><span>${esc(p.n)} <small class="text-muted">x${cart[k]}</small></span><b>${fmt(p.p * cart[k])}</b></div>`;
+      })
+      .join("")}
+      <div class="ln"><span>Subtotal</span><b>${fmt(t.sub)}</b></div><div class="ln"><span>Shipping</span><b class="text-success">Free</b></div>${t.d ? `<div class="ln"><span>Discount</span><b class="text-danger">-${fmt(t.d)}</b></div>` : ""}<div class="ln tot"><span>Total</span><span>${fmt(t.tot)}</span></div>
+      <button class="btn-g w-100 mt-3">Place Order</button></div></div></div></form>`)
+        );
+      };
+
+      R.success = (q, seg) =>
+        crumb("Order Placed") +
+        sec(
+          `<div class="empty-box"><div class="okc"><i class="bi bi-check-lg"></i></div><h2>Thank you! Your order is placed.</h2><p class="text-muted">Your order number is <b class="text-dark">${esc(seg[1] || "")}</b>. We have sent the details to your email.</p><a href="#/track?id=${esc(seg[1] || "")}" class="btn-g me-2">Track Order</a><a href="#/shop" class="ghost">Continue Shopping</a></div>`,
+        );
+
+      const STEPS = [
+        ["Order Placed", "bi-receipt"],
+        ["Processing", "bi-box-seam"],
+        ["Shipped", "bi-truck"],
+        ["Out for Delivery", "bi-bicycle"],
+        ["Delivered", "bi-house-check"],
+      ];
+      const stepOf = (o) =>
+        Math.min(5, 1 + Math.floor((Date.now() - new Date(o.date)) / 60000)); // demo: moves ahead every minute
+      const dt = (d) =>
+        new Date(d).toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        });
+      R.track = (q) => {
+        const id = (q.get("id") || "").trim().toUpperCase(),
+          o = id && orders.find((x) => x.id == id);
+        return (
+          crumb("Track Order") +
+          sec(`<div class="row justify-content-center"><div class="col-lg-8"><h1 class="pghead">Track Your Order</h1><form id="trForm" class="d-flex gap-2 mb-4"><input class="form-control" name="id" placeholder="Enter order number e.g. EB1234567" value="${esc(id)}" required><button class="btn-g px-4">Track</button></form>
+  ${
+    o
+      ? (() => {
+          const s = stepOf(o);
+          return `<div class="box"><div class="d-flex justify-content-between flex-wrap gap-2"><div><b class="text-dark">Order ${o.id}</b><div class="small text-muted">Placed on ${dt(o.date)}</div></div><div class="text-end"><span class="badge-s">${STEPS[s - 1][0]}</span><div class="small text-muted mt-1">Total ${fmt(o.total)}</div></div></div><div class="tl">${STEPS.map((x, i) => `<div class="${i < s ? "done" : ""}"><i class="bi ${x[1]}"></i>${x[0]}</div>`).join("")}</div></div>`;
+        })()
+      : id
+        ? emptyBox(
+            "bi-search",
+            "Order not found",
+            "Check the order number and try again.",
+            "#/orders",
+            "View my orders",
+          )
+        : '<p class="text-muted text-center">Enter your order number to see its live status.</p>'
+  }</div></div>`)
+        );
+      };
+      R.orders = () =>
+        crumb("Order History") +
+        sec(
+          `<h1 class="pghead">Order History</h1>` +
+            (orders.length
+              ? `<div class="box p-0 table-responsive"><table class="tbl"><thead><tr><th>Order</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th><th></th></tr></thead><tbody>${orders.map((o) => `<tr><td><b class="text-dark">${o.id}</b></td><td>${dt(o.date)}</td><td>${o.items.reduce((a, i) => a + i.q, 0)} items</td><td>${fmt(o.total)}</td><td><span class="badge-s">${STEPS[stepOf(o) - 1][0]}</span></td><td><a class="text-success fw-medium" href="#/track?id=${o.id}">Track</a></td></tr>`).join("")}</tbody></table></div>`
+              : emptyBox(
+                  "bi-receipt",
+                  "No orders yet",
+                  "When you place an order it will appear here.",
+                  "#/shop",
+                  "Start shopping",
+                )),
+        );
+      R.account = () => {
+        if (!user)
+          return (
+            crumb("My Account") +
+            sec(
+              emptyBox(
+                "bi-person-lock",
+                "Please sign in",
+                "Sign in to view your account.",
+                "#",
+                "Sign In",
+              ).replace('href="#"', 'href="#" data-auth="in"'),
+            )
+          );
+        return (
+          crumb("My Account") +
+          sec(`<h1 class="pghead">Hello, ${esc(user.name)} 👋</h1><div class="row g-4"><div class="col-lg-4"><div class="box text-center"><span class="av mx-auto mb-2" style="background:#00b207;width:80px;height:80px;font-size:28px">${esc(user.name[0].toUpperCase())}</span><h5 class="mb-1">${esc(user.name)}</h5><p class="text-muted small">${esc(user.email)}</p>
+    <div class="cl text-start"><a href="#/orders">My Orders <small>${orders.length}</small></a><a href="#/wishlist">Wishlist <small>${wish.size}</small></a><a href="#/cart">Cart <small>${cartIds().length}</small></a></div><button class="ghost w-100 mt-3" data-logout>Logout</button></div></div>
+    <div class="col-lg-8"><div class="box"><h5>Account Settings</h5><form id="accForm"><div class="row g-2"><div class="col-md-6 fld"><label>Full name</label><input class="form-control" name="name" value="${esc(user.name)}" required></div><div class="col-md-6 fld"><label>Email</label><input class="form-control" value="${esc(user.email)}" disabled></div>
+    <div class="col-12"><label class="small mb-1">New password (optional)</label>${pw("pass", "Leave blank to keep current password")}</div></div><button class="btn-g">Save Changes</button></form></div></div></div>`)
+        );
+      };
+      R[404] = () =>
+        crumb("404") +
+        sec(
+          emptyBox(
+            "bi-emoji-frown",
+            "Page not found",
+            "The page you are looking for does not exist.",
+            "#/home",
+            "Back to home",
+          ),
+        );
+
+      /* ======================= router ======================= */
+      const NAVMAP = () =>
+        $$(".mnav #navc > ul > li").forEach((li) =>
+          li.classList.toggle(
+            "on",
+            (li.dataset.r || "").split(" ").includes(page),
+          ),
+        );
+      function route(keep) {
+        const raw = location.hash.replace(/^#\/?/, "") || "home",
+          [path, qs] = raw.split("?"),
+          seg = path.split("/").map(decodeURIComponent),
+          q = new URLSearchParams(qs || "");
+        page = seg[0] || "home";
+        const hv = $("#v-home"),
+          pv = $("#v-page");
+        if (page == "home") {
+          hv.hidden = false;
+          pv.hidden = true;
+          renderAll();
+        } else {
+          pv.innerHTML = (R[page] || R[404])(q, seg);
+          hv.hidden = true;
+          pv.hidden = false;
+          fixImgs();
+        }
+        NAVMAP();
+        if (pending) {
+          const t = pending;
+          pending = null;
+          setTimeout(
+            () => $("#" + t)?.scrollIntoView({ behavior: "smooth" }),
+            60,
+          );
+        } else if (!keep) scrollTo(0, 0);
+      }
+      addEventListener("hashchange", () => route());
+
+      /* ======================= cart / wishlist ======================= */
+      const row = (x, extra) =>
+        `<div class="crow"><img data-src="${x.img}" alt=""><div class="t"><b>${esc(x.n)}</b>${fmt(x.p)}${extra[0]}</div>${extra[1]}</div>`;
+      function sync() {
+        save();
+        const ids = cartIds(),
+          t = totals(),
+          n = ids.reduce((a, k) => a + cart[k], 0);
+        $("#cartCount").textContent = n;
+        $("#cartTotal").textContent = fmt(t.tot);
+        $("#cartSub").textContent = fmt(t.tot);
+        $("#wishCount").textContent = wish.size;
+        $("#wishCount").hidden = !wish.size;
+        $("#cartList").innerHTML = ids.length
+          ? ids
+              .map((k) =>
+                row(find(k), [
+                  `<div class="qty"><button data-chg="${k}" data-d="-1">−</button><span>${cart[k]}</span><button data-chg="${k}" data-d="1">+</button></div>`,
+                  `<button class="rmv" data-rm="${k}"><i class="bi bi-x-circle"></i></button>`,
+                ]),
+              )
+              .join("")
+          : '<p class="text-center text-muted py-5">Your cart is empty.</p>';
+        fixImgs();
+        if (page == "cart" || page == "checkout") route(true);
+      }
+      function toggleFav(id) {
+        wish.has(id) ? wish.delete(id) : wish.add(id);
+        sync();
+        if (page == "home") renderAll();
+        else if (page != "cart" && page != "checkout") route(true);
+      }
+      const addCart = (id, n = 1) => {
+        cart[id] = (cart[id] || 0) + n;
+        sync();
+        toast(find(id).n + " added to cart");
+      };
+
+      /* ======================= auth ======================= */
+      function renderAuth() {
+        $("#authLink").innerHTML = user
+          ? `<div class="dropdown d-inline"><a href="#" data-bs-toggle="dropdown" class="fw-medium text-dark">Hi, ${esc(user.name.split(" ")[0])} <i class="bi bi-chevron-down small"></i></a><ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="#/account">My Account</a></li><li><a class="dropdown-item" href="#/orders">Order History</a></li><li><a class="dropdown-item" href="#" data-logout>Logout</a></li></ul></div>`
+          : '<a href="#" data-auth="in">Sign In</a> / <a href="#" data-auth="up">Sign Up</a>';
+      }
+      function pane(id, a) {
+        $$(".apane").forEach((p) => p.classList.toggle("on", p.id == id));
+        $("#atabs").dataset.a = a;
+        $$("#atabs button").forEach((b) =>
+          b.classList.toggle("on", b.dataset.pane == id),
+        );
+        $$(".aerr").forEach((e) => (e.textContent = ""));
+      }
+      const err = (f, m) => {
+        const e = $(".aerr", f);
+        e.textContent = m;
+        const b = $(".abtn", f);
+        b.classList.remove("shake");
+        void b.offsetWidth;
+        b.classList.add("shake");
+      };
+      const setUser = (u) => {
+        user = u;
+        LS.set("eco_user", u);
+        renderAuth();
+      };
+      const mail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+      function strength(v) {
+        let s = 0;
+        if (v.length >= 6) s++;
+        if (v.length >= 10) s++;
+        if (/[A-Z]/.test(v) && /[a-z]/.test(v)) s++;
+        if (/\d/.test(v) && /[^A-Za-z0-9]/.test(v)) s++;
+        return v ? Math.max(1, s) : 0;
+      }
+
+      /* ======================= events ======================= */
+      let qvId = null,
+        igI = 0;
+      document.addEventListener("click", (e) => {
+        const T = (s) => e.target.closest(s);
+        let a;
+        if ((a = T("[data-add]"))) {
+          e.preventDefault();
+          addCart(a.dataset.add);
+        }
+        if ((a = T("[data-addq]"))) addCart(a.dataset.addq, +$("#pdq").value);
+        if ((a = T("[data-q]"))) {
+          const i = $("#pdq");
+          i.value = Math.max(1, +i.value + +a.dataset.q);
+        }
+        if ((a = T("[data-chg]"))) {
+          const id = a.dataset.chg;
+          cart[id] += +a.dataset.d;
+          if (cart[id] < 1) delete cart[id];
+          sync();
+        }
+        if ((a = T("[data-rm]"))) {
+          delete cart[a.dataset.rm];
+          sync();
+        }
+        if (T("[data-clear]")) {
+          cart = {};
+          coupon = "";
+          sync();
+        }
+        if ((a = T("[data-fav]"))) {
+          e.preventDefault();
+          toggleFav(a.dataset.fav);
+        }
+        if ((a = T("[data-view]"))) {
+          const p = find(a.dataset.view);
+          qvId = p.id;
+          $("#qvName").textContent = p.n;
+          $("#qvPrice").textContent = fmt(p.p);
+          $("#qvMore").href = "#/product/" + p.id;
+          const im = $("#qvImg");
+          let i = 0;
+          im.onerror = () => {
+            if (i < EXT.length - 1) im.src = imgSrc(p.img, ++i);
+          };
+          im.src = imgSrc(p.img, 0);
+          bootstrap.Modal.getOrCreateInstance("#qvModal").show();
+        }
+        if ((a = T("[data-ig]"))) {
+          e.preventDefault();
+          igOpen(+a.dataset.ig);
+        }
+        if ((a = T("[data-ign]")))
+          igOpen((igI + +a.dataset.ign + IG.length) % IG.length);
+        if ((a = T("[data-cur]"))) {
+          e.preventDefault();
+          cur = a.dataset.cur;
+          $("#curBtn").textContent = cur;
+          sync();
+          route(true);
+        }
+        if ((a = T("[data-lang]"))) {
+          e.preventDefault();
+          $("#langBtn").textContent = a.dataset.lang;
+        }
+        if ((a = T("[data-t]"))) {
+          const t = $("#tTrack");
+          t.scrollBy({
+            left: a.dataset.t * ($(".tc", t).offsetWidth + 18),
+            behavior: "smooth",
+          });
+        }
+        if ((a = T("[data-auth]"))) {
+          e.preventDefault();
+          pane(a.dataset.auth == "up" ? "tUp" : "tIn", a.dataset.auth);
+          bootstrap.Modal.getOrCreateInstance("#authModal").show();
+        }
+        if ((a = T("[data-pane]"))) {
+          e.preventDefault();
+          pane(a.dataset.pane, a.dataset.a);
+        }
+        if (T("[data-logout]")) {
+          e.preventDefault();
+
+          setUser(null);
+
+          // Return to the home route, but keep the page locked.
+          location.hash = "#/home";
+          route();
+
+          toast("You have been logged out");
+          openAuthGate();
+        }
+        if ((a = T("[data-eye]"))) {
+          const i = $("input", a.parentNode),
+            show = i.type == "password";
+          i.type = show ? "text" : "password";
+          $("i", a).className = "bi " + (show ? "bi-eye-slash" : "bi-eye");
+          a.setAttribute(
+            "aria-label",
+            show ? "Hide password" : "Show password",
+          );
+        }
+        if ((a = T('a[href^="#/"]')) && a.closest(".modal"))
+          bootstrap.Modal.getInstance(a.closest(".modal"))?.hide();
+        if (
+          (a = T("#navc a.dropdown-item, #navc > ul > li > a")) &&
+          innerWidth < 992
+        )
+          bootstrap.Collapse.getOrCreateInstance("#navc").hide();
+      });
+      function igOpen(i) {
+        igI = i;
+        const im = $("#igImg");
+        let k = 0;
+        im.onerror = () => {
+          if (k < EXT.length - 1)
+            im.src = imgSrc("follow instagram/" + IG[i], ++k);
+        };
+        im.src = imgSrc("follow instagram/" + IG[i], 0);
+        $("#igCap").textContent = IGCAP[i];
+        bootstrap.Modal.getOrCreateInstance("#igModal").show();
+      }
+      $("#qvAdd").onclick = () => {
+        addCart(qvId);
+        bootstrap.Modal.getInstance("#qvModal").hide();
+      };
+
+      document.addEventListener("change", (e) => {
+        if (e.target.matches("[data-sort]")) {
+          const b = JSON.parse(e.target.dataset.base || "{}");
+          if (e.target.value) b.sort = e.target.value;
+          location.hash = shopUrl(b);
+        }
+        if (e.target.matches("#coForm [name=pay]"))
+          $("#cardF").hidden = e.target.value != "Credit / Debit Card";
+      });
+      document.addEventListener("input", (e) => {
+        if (e.target.id == "rPass") {
+          const s = strength(e.target.value),
+            c = ["", "#ea4b48", "#ff8a00", "#d4b106", "#00b207"][s];
+          $("#strBar").style.width = s * 25 + "%";
+          $("#strBar").style.background = c;
+          $("#strTxt").textContent = ["", "Weak", "Fair", "Good", "Strong"][s];
+          $("#strTxt").style.color = c;
+        }
+      });
+      document.addEventListener("submit", (e) => {
+        const f = e.target,
+          id = f.id;
+        if (!id) return;
+        e.preventDefault();
+        const v = (n) => (f.elements[n]?.value || "").trim();
+        if (id == "searchForm") {
+          const q = $("#q").value.trim();
+          location.hash = q ? shopUrl({ q }) : "#/shop";
+        } else if (id == "nlForm") {
+          toast("Thanks for subscribing!");
+          f.reset();
+        } else if (id == "pf") {
+          const b = JSON.parse(f.dataset.base || "{}");
+          if (v("min")) b.min = v("min");
+          if (v("max")) b.max = v("max");
+          location.hash = shopUrl(b);
+        } else if (id == "couponForm") {
+          const c = v("c").toUpperCase();
+          if (!c) {
+            coupon = "";
+            sync();
+            return;
+          }
+          if (COUP[c]) {
+            coupon = c;
+            sync();
+            toast("Coupon applied: " + Math.round(COUP[c] * 100) + "% off");
+          } else toast("Invalid coupon code");
+        } else if (id == "revForm") {
+          const k = "eco_rev_" + f.dataset.n,
+            l = LS.get(k, []);
+          l.unshift({ n: v("n"), s: +v("s"), t: v("t") });
+          LS.set(k, l);
+          toast("Thanks for your review!");
+          route(true);
+        } else if (id == "cmForm") {
+          const k = "eco_cm_" + f.dataset.id,
+            l = LS.get(k, [
+              [
+                "Eleanor Pena",
+                "Great article! I started adding more greens to my meals and feel so much better.",
+              ],
+              [
+                "Robert Fox",
+                "Thanks for the tips — the colourful plate idea is really easy to follow.",
+              ],
+            ]);
+          l.push([v("n"), v("t")]);
+          LS.set(k, l);
+          toast("Comment posted");
+          route(true);
+        } else if (id == "ctForm") {
+          toast("Message sent! We will reply within 24 hours.");
+          f.reset();
+        } else if (id == "trForm")
+          location.hash = "#/track?id=" + encodeURIComponent(v("id"));
+        else if (id == "accForm") {
+          user.name = v("name") || user.name;
+          const np = v("pass");
+          const u = users.find((x) => x.email == user.email);
+          if (u) {
+            u.name = user.name;
+            if (np.length >= 6) u.pass = np;
+            else if (np) return toast("Password must be at least 6 characters");
+            LS.set("eco_users", users);
+          }
+          setUser(user);
+          toast("Account updated");
+          route(true);
+        } else if (id == "coForm") {
+          const bad = ["fname", "email", "phone", "city", "addr"].some(
+            (n) => !v(n),
+          );
+          if (bad || !mail(v("email")))
+            return ($("#coErr").textContent =
+              "Please fill in all required fields with valid details.");
+          const pay = f.elements.pay.value;
+          if (
+            pay.startsWith("Credit") &&
+            (v("cn").replace(/\s/g, "").length < 12 ||
+              !v("ce") ||
+              v("cc").length < 3)
+          )
+            return ($("#coErr").textContent =
+              "Please enter valid card details.");
+          const t = totals(),
+            oid = "EB" + String(Date.now()).slice(-7);
+          orders.unshift({
+            id: oid,
+            date: new Date().toISOString(),
+            items: cartIds().map((k) => ({ id: k, n: find(k).n, q: cart[k] })),
+            total: t.tot,
+            pay,
+            name: v("fname"),
+            email: v("email"),
+          });
+          LS.set("eco_orders", orders);
+          cart = {};
+          coupon = "";
+          sync();
+          location.hash = "#/success/" + oid;
+          toast("Order placed successfully!");
+        } else if (id == "lForm") {
+          const em = v("email").toLowerCase(),
+            u = users.find(
+              (x) => x.email == em && x.pass == f.elements.pass.value,
+            );
+          if (!mail(em) || !f.elements.pass.value)
+            return err(f, "Please enter your email and password.");
+          if (!u) return err(f, "Incorrect email or password.");
+          setUser({ name: u.name, email: u.email });
+          bootstrap.Modal.getInstance("#authModal").hide();
+          toast("Welcome back, " + u.name.split(" ")[0] + "!");
+          f.reset();
+          document.body.classList.remove("auth-locked");
+          location.hash = "#/home";
+          route();
+        } else if (id == "rForm") {
+          const em = v("email").toLowerCase();
+          if (v("name").length < 2)
+            return err(f, "Please enter your full name.");
+          if (!mail(em)) return err(f, "Please enter a valid email address.");
+          if (f.elements.pass.value.length < 6)
+            return err(f, "Password must be at least 6 characters.");
+          if (f.elements.pass.value != f.elements.pass2.value)
+            return err(f, "Passwords do not match.");
+          if (!f.elements.terms.checked)
+            return err(f, "Please accept the terms & conditions.");
+          if (users.some((x) => x.email == em))
+            return err(f, "An account with this email already exists.");
+          users.push({
+            name: v("name"),
+            email: em,
+            pass: f.elements.pass.value,
+          });
+          LS.set("eco_users", users);
+
+          // Registration creates an account but does not log the user in.
+          // Keep the authentication screen open and return to Sign In.
+          f.reset();
+          $("#strBar").style.width = "0";
+          $("#strTxt").textContent = "";
+          pane("tIn", "in");
+          const loginEmail = $("#lForm").elements.email;
+          if (loginEmail) loginEmail.value = em;
+          document.body.classList.add("auth-locked");
+          toast("Account created successfully. Please log in.");
+        } else if (id == "fForm") {
+          const em = v("email").toLowerCase(),
+            u = users.find((x) => x.email == em);
+          if (!u) return err(f, "No account found with this email.");
+          if (f.elements.pass.value.length < 6)
+            return err(f, "Password must be at least 6 characters.");
+          u.pass = f.elements.pass.value;
+          LS.set("eco_users", users);
+          toast("Password updated. Please sign in.");
+          f.reset();
+          pane("tIn", "in");
+        }
+      });
+
+      const tt = $("#toTop");
+      addEventListener("scroll", () => tt.classList.toggle("s", scrollY > 500));
+      tt.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+
+      // ===== INITIAL AUTHENTICATION GATE =====
+      function openAuthGate() {
+        // Do not restore a previous login after reopening or refreshing the site.
+        // Only the account list (eco_users) should persist between visits.
+        user = null;
+        LS.set("eco_user", null);
+        document.body.classList.add("auth-locked");
+
+        // Always start on Sign In. New users can choose Sign Up.
+        pane("tIn", "in");
+
+        bootstrap.Modal.getOrCreateInstance($("#authModal"), {
+          backdrop: "static",
+          keyboard: false,
+        }).show();
+      }
+
+      renderAuth();
+      sync();
+      route();
+      openAuthGate();
+    </script>
+  </body>
+</html>
