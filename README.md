@@ -2,7 +2,7 @@
 
 A modern, responsive e-commerce website for fresh and organic groceries, built with **HTML, CSS and vanilla JavaScript**. It covers the complete shopping journey: from signing in and browsing products to checkout and live order tracking.
 
-🔗 **Live Demo:** [Add your live link here](#)
+🔗 **Live Demo:** [https://umarraja61933.github.io/ecobazar-ecommerce/](#)
 
 ---
 
